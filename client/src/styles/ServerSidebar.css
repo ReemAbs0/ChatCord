@@ -1,0 +1,71 @@
+.server-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.server-pill {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 8px;
+  background: white;
+  border-radius: 0 6px 6px 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+  opacity: 0;
+}
+
+.server-wrapper:hover .server-pill {
+  height: 22px;
+  opacity: 1;
+}
+
+.active-server .server-pill {
+  height: 40px;
+  opacity: 1;
+}
+
+.server-icon {
+  width: 48px;
+  height: 48px;
+  background: #282a2f;
+  color: #c6c5d7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+  font-weight: bold;
+}
+
+.server-icon:hover {
+  border-radius: 16px;
+  background: #5865f2;
+  color: white;
+}
+
+.server-icon.active {
+  background: #5865f2;
+  color: white;
+  border-radius: 16px;
+}
+
+.home-icon {
+  background: #5865f2;
+  color: white;
+  border-radius: 16px;
+}
+
+.add-server {
+  color: #66de8b;
+}
+
+.add-server:hover {
+  background: #66de8b;
+  color: black;
+}

@@ -1,0 +1,89 @@
+.channel-sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #191c20;
+  border-left: 1px solid #111318;
+}
+
+.server-header {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.channel-title {
+  font-size: 12px;
+  color: #8f8fa0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
+
+.channel-item {
+  color: #b5bac1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.channel-item:hover {
+  background: #2b2d31;
+  color: white;
+}
+
+.active-channel {
+  background: #33353a;
+  color: white;
+  font-weight: 600;
+}
+
+.user-footer {
+  background: #111318;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar-icon {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-icon:hover {
+  color: white;
+}
+.sidebar-actions {
+  display: flex;
+  align-items: center;
+  
+}
+
+.sidebar-action-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #b5bac1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-action-icon:hover {
+  background: #2b2d31;
+  color: white;
+}
+
+.sidebar-action-icon i {
+  font-size: 16px;
+}
+
+/* logout hover */
+.sidebar-action-icon:last-child:hover {
+  background: #da373c;
+  color: white;
+}

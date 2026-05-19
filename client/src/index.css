@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111318;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* تحسين شكل الروابط */
+a {
+  transition: 0.2s ease;
+}
+
+/* تحسين inputs بشكل عام فوق Bootstrap */
+input.form-control {
+  background-color: #1d2024;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+input.form-control:focus {
+  background-color: #1d2024;
+  color: #fff;
+  border-color: #5865f2;
+  box-shadow: none;
+}
+
+/* تحسين زرار Bootstrap */
+.btn-primary {
+  background-color: #5865f2;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #4752c4;
+}
+
+/* نصوص ثانوية */
+.text-secondary {
+  color: #a0a0a0 !important;
+}
+.login-card {
+  background: rgba(43, 45, 49, 0.6); /* رمادي شفاف */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  width: 100%;
+  max-width: 420px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}

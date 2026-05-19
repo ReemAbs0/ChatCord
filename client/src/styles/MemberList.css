@@ -1,0 +1,51 @@
+.member-sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #191c20;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.member-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8f8fa0;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 4px;
+}
+
+.member-item:hover {
+  background: #2b2d31;
+}
+
+.status-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  bottom: -2px;
+  right: -2px;
+  border-radius: 50%;
+  border: 2px solid #191c20;
+}
+
+.online-dot {
+  background: #23a55a;
+}
+
+.offline-dot {
+  background: #80848e;
+}
+
+.offline-user {
+  opacity: 0.6;
+}

@@ -1,0 +1,87 @@
+.chat-area {
+  flex: 1;
+  height: 100vh;
+  background: #111318;
+}
+
+.chat-header {
+  height: 56px;
+  background: #111318;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.08);
+}
+
+.header-icon {
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+.header-icon:hover {
+  color: white !important;
+}
+
+.search-box {
+  width: 180px;
+}
+
+.chat-search {
+  background: #0c0e13 !important;
+  border: none !important;
+  color: white !important;
+  padding-right: 35px;
+}
+
+.chat-search::placeholder {
+  color: #8f8fa0;
+}
+
+.chat-search:focus {
+  box-shadow: none !important;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  color: #8f8fa0;
+}
+
+.messages-container {
+  overflow-y: auto;
+}
+
+.message-input-wrapper {
+  background: #111318;
+}
+
+.message-input {
+  background: #282a2f;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.input-btn {
+  background: none;
+  border: none;
+  color: #8f8fa0;
+  font-size: 24px;
+}
+
+.input-btn:hover {
+  color: white;
+}
+
+.input-icon {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-icon:hover {
+  color: white;
+}
