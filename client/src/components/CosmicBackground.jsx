@@ -1,5 +1,5 @@
 import { useEffect, useRef, useMemo } from "react";
-
+import "../styles/CosmicBackground.css";
 
 const CosmicBackground = () => {
   // استخدام Refs للطبقات لتحديث الحركة مباشرة بدون إعادة التصيير (Performance)
@@ -30,7 +30,7 @@ const CosmicBackground = () => {
       // حساب موضع الماوس بالنسبة لمنتصف الشاشة (من -1 إلى 1)
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
-      
+
       const x = (e.clientX - centerX) / centerX;
       const y = (e.clientY - centerY) / centerY;
 
@@ -57,78 +57,8 @@ const CosmicBackground = () => {
     };
   }, []);
 
-  // وضعنا الـ CSS هنا ليكون الملف ذاتي الاحتواء ويسهل نقله
-  const styles = `
-    .cosmic-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-      background: radial-gradient(circle, #1e2129 0%, #111318 100%);
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .layer {
-      position: absolute;
-      /* قمنا بتوسيع الطبقة لتفادي ظهور حواف الشاشة عند تحريك الماوس */
-      top: -10%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      will-change: transform;
-      /* انتقال ناعم في حال توقف الماوس */
-      transition: transform 0.1s ease-out; 
-    }
-
-    .stars-container {
-      position: absolute;
-      inset: 0;
-    }
-
-    .star {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: twinkle var(--duration) infinite ease-in-out;
-    }
-
-    @keyframes twinkle {
-      0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.5); /* زيادة بسيطة لإعطاء تأثير لمعان أجمل */
-      }
-    }
-
-    .nebula {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(88,101,242,0.15) 0%, transparent 70%);
-      filter: blur(80px);
-      z-index: -1;
-      pointer-events: none; /* لمنع السديم من اعتراض الماوس */
-    }
-
-    .nebula-1 {
-      top: -100px;
-      left: -100px;
-    }
-
-    .nebula-2 {
-      bottom: -100px;
-      right: -100px;
-    }
-  `;
-
   return (
     <>
-      <style>{styles}</style>
       <div className="cosmic-bg">
         {/* السديم الثابت */}
         <div className="nebula nebula-1"></div>
@@ -146,7 +76,7 @@ const CosmicBackground = () => {
                   height: star.size,
                   left: star.left,
                   top: star.top,
-                  "--duration": star.duration,
+                  animationDuration: star.duration,
                 }}
               ></div>
             ))}
@@ -165,7 +95,7 @@ const CosmicBackground = () => {
                   height: star.size,
                   left: star.left,
                   top: star.top,
-                  "--duration": star.duration,
+                  animationDuration: star.duration,
                 }}
               ></div>
             ))}
@@ -184,7 +114,7 @@ const CosmicBackground = () => {
                   height: star.size,
                   left: star.left,
                   top: star.top,
-                  "--duration": star.duration,
+                  animationDuration: star.duration,
                 }}
               ></div>
             ))}

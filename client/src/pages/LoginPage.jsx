@@ -1,14 +1,15 @@
 import CosmicBackground from "../components/CosmicBackground";
 import LoginHeader from "../components/LoginHeader";
 import LoginForm from "../components/LoginForm";
+import "../styles/login.css"
 
 export default function LoginPage() {
   return (
     <>
       <CosmicBackground />
 
-      <div className="d-flex flex-column align-items-center justify-content-center min-vh-100">
-        <div className="login-card p-4 rounded-3">
+      <div className="login-page">
+        <div className="login-card">
         <LoginHeader />
         <LoginForm />
         </div>

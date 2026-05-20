@@ -1,5 +1,5 @@
 import "../styles/ServerSidebar.css";
-
+import logo from "../assets/logo.png";
 
 export default function ServerSidebar() {
   return (
@@ -12,11 +12,15 @@ export default function ServerSidebar() {
       }}
     >
       {/* Home */}
-      <div className="server-wrapper active-server mb-2">
+      <div className="server-wrapper mb-2">
         <div className="server-pill"></div>
 
         <div className="server-icon home-icon">
-          <i className="bi bi-house-fill"></i>
+          <img
+            src={logo}
+            alt="ChatCord Logo"
+            style={{ width: "35px", height: "40px" }}
+          />
         </div>
       </div>
 
@@ -34,18 +38,14 @@ export default function ServerSidebar() {
       <div className="server-wrapper active-server">
         <div className="server-pill"></div>
 
-        <div className="server-icon active">
-          DS
-        </div>
+        <div className="server-icon active">DS</div>
       </div>
 
       {/* Server 2 */}
       <div className="server-wrapper">
         <div className="server-pill"></div>
 
-        <div className="server-icon">
-          WD
-        </div>
+        <div className="server-icon">WD</div>
       </div>
 
       {/* Server 3 */}
@@ -58,7 +58,7 @@ export default function ServerSidebar() {
       </div>
 
       {/* Add server */}
-      <div className="mt-auto server-wrapper">
+      <div className="server-wrapper">
         <div className="server-icon add-server">
           <i className="bi bi-plus-lg"></i>
         </div>

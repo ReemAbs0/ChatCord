@@ -45,27 +45,25 @@
 
 .server-icon:hover {
   border-radius: 16px;
-  background: #5865f2;
+  background: #0d6efd;
   color: white;
 }
 
 .server-icon.active {
-  background: #5865f2;
+  background: #0d6efd;
   color: white;
   border-radius: 16px;
 }
 
 .home-icon {
-  background: #5865f2;
-  color: white;
   border-radius: 16px;
 }
 
 .add-server {
-  color: #66de8b;
+  color: white;
 }
 
 .add-server:hover {
-  background: #66de8b;
-  color: black;
+  background: #0d6efd;
+  color: white;
 }

@@ -1,21 +1,19 @@
-import { Container } from "react-bootstrap";
 import logo from "../assets/logo.png";
+import "../styles/register.css";
 
 const RegisterHeader = () => {
   return (
-    <Container className="text-center mb-4">
-      {/* Icon */}
-      <div>
-        <img
-          src={logo}
-          alt="ChatCord Logo"
-          style={{ width: "100px", height: "100px" }}
-        />
-      </div>
+    <div className="register-header">
+      <img
+        src={logo}
+        alt="ChatCord Logo"
+        className="register-logo"
+      />
 
-      {/* Title */}
-      <h2 className="fw-bold text-light">Create an account</h2>
-    </Container>
+      <h2 className="register-title">
+        Create an account
+      </h2>
+    </div>
   );
 };
 
