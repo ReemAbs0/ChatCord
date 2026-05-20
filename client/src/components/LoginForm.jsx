@@ -31,7 +31,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="login-form">
-      <label>Email or Phone Number</label>
+      <label>Email</label>
       <input
         type="text"
         name="identity"
