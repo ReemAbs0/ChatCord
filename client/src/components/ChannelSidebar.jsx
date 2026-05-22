@@ -1,16 +1,26 @@
 import "../styles/ChannelSidebar.css";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function ChannelSidebar() {
-  const navigate = useNavigate();
+export default function ChannelSidebar({
+  channels,
+  selectedChannel,
+  setSelectedChannel,
+}) {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get("http://localhost:5001/api/users");
 
-  const handleLogout = () => {
-    // Clear any authentication tokens or user data here
-    // For example: localStorage.removeItem("authToken");
+        setUsers(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-    // Redirect to login page
-    navigate("/");
-  };
+    fetchUsers();
+  }, []);
   return (
     <div className="channel-sidebar d-flex flex-column">
       {/* Header */}
@@ -19,7 +29,7 @@ export default function ChannelSidebar() {
           <div>
             <h5 className="mb-0 fw-semibold text-white">Design Community</h5>
 
-            <small className="text-secondary">1,284 Members</small>
+            <small className="text-secondary">{users.length} Members</small>
           </div>
 
           <i className="bi bi-chevron-down text-secondary"></i>
@@ -47,20 +57,18 @@ export default function ChannelSidebar() {
         <div className="mt-4">
           <p className="channel-title">TEXT CHANNELS</p>
 
-          <div className="channel-item active-channel">
-            <i className="bi bi-hash me-2"></i>
-            general-chat
-          </div>
-
-          <div className="channel-item">
-            <i className="bi bi-hash me-2"></i>
-            gaming
-          </div>
-
-          <div className="channel-item">
-            <i className="bi bi-folder me-2"></i>
-            resources
-          </div>
+          {channels.map((channel) => (
+            <div
+              key={channel._id}
+              className={`channel-item ${
+                selectedChannel === channel._id ? "active-channel" : ""
+              }`}
+              onClick={() => setSelectedChannel(channel._id)}
+            >
+              <i className="bi bi-hash me-2"></i>
+              {channel.name}
+            </div>
+          ))}
         </div>
 
         {/* Voice Channels */}
@@ -80,31 +88,6 @@ export default function ChannelSidebar() {
       </div>
 
       {/* Footer User */}
-      <div className="user-footer p-2 d-flex align-items-center">
-        <img
-          src="https://i.pravatar.cc/40?img=5"
-          alt="profile"
-          className="rounded-circle"
-          width="40"
-          height="40"
-        />
-
-        <div className="ms-2 flex-grow-1">
-          <div className="text-white small fw-semibold">CreativePro</div>
-
-          <small className="text-secondary">#1337</small>
-        </div>
-
-        <div className="d-flex align-items-center sidebar-actions">
-          <i className="bi bi-mic-fill sidebar-action-icon"></i>
-
-          <i className="bi bi-headphones sidebar-action-icon"></i>
-
-          <div className="sidebar-action-icon" onClick={handleLogout}>
-            <i className="bi bi-box-arrow-right"></i>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

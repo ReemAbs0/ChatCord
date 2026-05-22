@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/login.css";
+import axios from "axios";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
-    identity: "",
+    email: "",
     password: "",
   });
-
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -18,15 +17,24 @@ const LoginForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    try {
+      const response = await axios.post(
+        "http://localhost:5001/api/users/login",
+        {
+          email: formData.email,
+          password: formData.password,
+        },
+      );
 
-    setTimeout(() => {
-      setLoading(false);
-      alert("Login successful 🚀");
+      alert(response.data.message);
+      console.log(response.data.user);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
       navigate("/chat");
-    }, 1500);
+    } catch (error) {
+      alert(error.response?.data?.message || "Login failed");
+    }
   };
 
   return (
@@ -34,8 +42,8 @@ const LoginForm = () => {
       <label>Email</label>
       <input
         type="text"
-        name="identity"
-        value={formData.identity}
+        name="email"
+        value={formData.email}
         onChange={handleChange}
         className="input-style"
       />
@@ -53,8 +61,8 @@ const LoginForm = () => {
         <Link to="/forgot-password">Forgot your password?</Link>
       </div>
 
-      <button type="submit" disabled={loading} className="btn-primary">
-        {loading ? "Logging in..." : "Log In"}
+      <button type="submit" className="btn-primary">
+        Log In
       </button>
 
       <p className="footer text-secondary">

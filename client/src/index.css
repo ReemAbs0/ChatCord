@@ -11,14 +11,15 @@ a {
 }
 
 .select-style,
-.input-style{
+.input-style {
   padding: 10px;
-  border: none;
+  border: 1px solid #1f2430;
   border-radius: 8px;
   background: #1f2430;
   color: white;
   outline: none;
 }
+.select-style:focus,
 .input-style:focus {
   background-color: #1d2024;
   color: #fff;
@@ -36,9 +37,33 @@ a {
 }
 
 .btn-primary:hover {
-  background-color: #0d5cd2; 
+  background-color: #0d5cd2;
 }
 
 .text-secondary {
   color: #a0a0a0 !important;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebars {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.user-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
 }

@@ -1,4 +1,6 @@
-export default function ChatHeader() {
+import '../styles/chatArea.css';
+
+export default function ChatHeader({ channel }) {
   return (
     <div className="chat-header d-flex justify-content-between align-items-center px-4">
 
@@ -7,7 +9,7 @@ export default function ChatHeader() {
         <i className="bi bi-hash text-secondary me-2"></i>
 
         <h5 className="mb-0 text-white fw-semibold">
-          general-chat
+          {channel?.name || "general-chat"}
         </h5>
 
         <div className="header-divider mx-3"></div>
